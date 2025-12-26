@@ -19,9 +19,10 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
             clearInterval(interval);
             return 100;
           }
-          return prev + Math.floor(Math.random() * 12) + 1;
+          const jump = Math.floor(Math.random() * 8) + 1;
+          return Math.min(prev + jump, 100);
         });
-      }, 40);
+      }, 50);
       return () => clearInterval(interval);
     }
   }, [isLoading]);
@@ -30,52 +31,43 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          key="loader-curtain"
+          key="loader-screen"
           initial={{ y: 0 }}
           exit={{ 
             y: "-100%", 
-            transition: { 
-              duration: 1.2, 
-              ease: [0.77, 0, 0.175, 1] // Strong Expo ease for "Slide Up"
-            } 
+            transition: { duration: 1, ease: [0.85, 0, 0.15, 1] } 
           }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white overflow-hidden"
         >
-          <div className="absolute inset-0 bg-grid-main opacity-40 pointer-events-none" />
+          <div className="absolute inset-0 bg-grid-main opacity-20" />
           
-          <div className="relative z-10 flex flex-col items-center max-w-xs w-full px-6">
+          <div className="relative z-10 flex flex-col items-center w-64">
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="mb-12"
+              className="mb-10 w-24 h-24 bg-white border border-zinc-100 rounded-3xl p-3 shadow-xl overflow-hidden"
             >
-              <div className="w-28 h-28 bg-white border border-zinc-100 rounded-[2.5rem] flex items-center justify-center shadow-2xl p-4 overflow-hidden">
-                <img src="https://cdn.nefusoft.cloud/RWIJ1.jpg" alt="Logo" className="w-full h-full object-cover rounded-2xl" />
-              </div>
+              <img src="https://cdn.nefusoft.cloud/RWIJ1.jpg" alt="Logo" className="w-full h-full object-cover rounded-xl" />
             </motion.div>
 
-            <div className="text-zinc-900 font-jp text-[12px] font-black uppercase tracking-[0.6em] mb-4">
-              旅の準備... {progress}%
-            </div>
-
-            <div className="w-full h-[4px] bg-zinc-50 rounded-full overflow-hidden mb-6 border border-zinc-100">
-              <motion.div
-                className="h-full bg-zinc-900"
-                initial={{ width: "0%" }}
-                animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.2 }}
-              />
-            </div>
-
-            <div className="text-zinc-300 text-[10px] font-bold uppercase tracking-[0.4em] text-center">
-              Wandering in Code
+            <div className="w-full space-y-4">
+              <div className="flex justify-between items-end px-1">
+                <span className="text-[9px] font-black text-zinc-900 uppercase tracking-[0.4em]">Memulai Perjalanan</span>
+                <span className="text-[12px] font-black text-zinc-900">{progress}%</span>
+              </div>
+              <div className="h-1.5 w-full bg-zinc-50 border border-zinc-100 rounded-full overflow-hidden">
+                <motion.div 
+                  className="h-full bg-zinc-900" 
+                  initial={{ width: 0 }}
+                  animate={{ width: `${progress}%` }}
+                />
+              </div>
             </div>
           </div>
 
-          {/* Decorative Kanji in Loader */}
-          <div className="absolute bottom-12 right-12 text-zinc-100 font-jp font-black text-8xl pointer-events-none">
-            魔女
+          <div className="absolute bottom-10 font-jp text-[8px] font-black uppercase tracking-[0.6em] text-zinc-300">
+            TRAVELING WITCH • ALIF BILAL
           </div>
         </motion.div>
       )}
