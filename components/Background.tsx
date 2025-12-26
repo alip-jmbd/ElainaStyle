@@ -7,39 +7,33 @@ const motion = m as any;
 const Background: React.FC = () => {
   const { scrollYProgress } = useScroll();
   
-  const gridY = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -300]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -400]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-white">
-      <motion.div 
-        style={{ 
-          y: gridY,
-          backgroundImage: 'linear-gradient(#f7f7f7 1px, transparent 1px), linear-gradient(90deg, #f7f7f7 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
-        }}
-        className="absolute inset-0 opacity-100 pointer-events-none" 
-      />
+      {/* Structural Grid - High Visibility */}
+      <div className="absolute inset-0 bg-grid-main opacity-40 pointer-events-none" />
       
-      <div className="absolute inset-0 font-jp select-none pointer-events-none overflow-hidden">
-        <motion.div 
-          style={{ y: y1 }}
-          className="absolute top-[5%] left-[-10%] text-[20rem] md:text-[35rem] font-black text-zinc-900/[0.02]"
-        >
-          魔女
-        </motion.div>
-        <motion.div 
-          style={{ y: y2 }}
-          className="absolute bottom-[5%] right-[-10%] text-[18rem] md:text-[30rem] font-black text-zinc-900/[0.02]"
-        >
-          旅人
+      {/* Side Typography Decor - Vertical Alignment (Japanese Style) */}
+      <div className="absolute top-0 right-8 md:right-24 h-full flex flex-col justify-between py-40 font-jp select-none pointer-events-none opacity-[0.05]">
+        <motion.div style={{ y: y1 }} className="text-[15rem] md:text-[25rem] font-black leading-none flex flex-col">
+          <span>魔</span>
+          <span>女</span>
         </motion.div>
       </div>
 
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-white to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-96 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute top-1/4 left-8 md:left-24 h-full font-jp select-none pointer-events-none opacity-[0.03]">
+        <motion.div style={{ y: y2 }} className="text-[12rem] md:text-[20rem] font-black leading-none flex flex-col">
+          <span>旅</span>
+          <span>人</span>
+        </motion.div>
+      </div>
+
+      {/* Modern Gradient Fades */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-white via-white/80 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-white via-white/80 to-transparent" />
       </div>
     </div>
   );

@@ -31,35 +31,16 @@
         background: #e5e7eb;
         border-radius: 10px;
       }
-      .pixel-grid {
-        background-image: linear-gradient(#f0f0f0 1px, transparent 1px), linear-gradient(90deg, #f0f0f0 1px, transparent 1px);
+      /* Clean technical grid */
+      .bg-grid-main {
+        background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
         background-size: 32px 32px;
-      }
-      .page-fade-top {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 40px;
-        background: linear-gradient(to bottom, white, transparent);
-        z-index: 45;
-        pointer-events: none;
-      }
-      .page-fade-bottom {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 40px;
-        background: linear-gradient(to top, white, transparent);
-        z-index: 45;
-        pointer-events: none;
       }
       .grain {
         position: fixed;
         inset: 0;
-        z-index: -1;
-        opacity: 0.02;
+        z-index: 50;
+        opacity: 0.03;
         pointer-events: none;
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       }
@@ -81,9 +62,7 @@
   </head>
   <body>
     <div class="grain"></div>
-    <div class="page-fade-top"></div>
     <div id="root"></div>
-    <div class="page-fade-bottom"></div>
     <script type="module" src="index.tsx"></script>
   </body>
 </html>

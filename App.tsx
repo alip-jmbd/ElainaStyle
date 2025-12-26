@@ -19,8 +19,7 @@ const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Increased delay slightly to allow smoother DOM mounting in background
-    const timer = setTimeout(() => setIsLoading(false), 2400);
+    const timer = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -50,34 +49,29 @@ const App: React.FC = () => {
         ) : (
           <motion.div
             key="main-content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, ease: [0.33, 1, 0.68, 1] }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           >
             <Background />
-            <motion.main
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10"
-            >
-              <nav className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-5xl">
-                <div className="bg-white/90 backdrop-blur-3xl border border-zinc-100 rounded-[2.5rem] px-6 py-4 md:px-8 md:py-5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] flex items-center justify-between">
+            <motion.main className="relative z-10">
+              <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-5xl">
+                <div className="bg-white/80 backdrop-blur-3xl border border-zinc-100 rounded-[3rem] px-8 py-5 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] flex items-center justify-between">
                   <motion.div 
-                    whileHover={{ scale: 1.02 }}
-                    className="flex items-center gap-3 cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center gap-4 cursor-pointer"
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   >
-                    <div className="w-10 h-10 md:w-11 md:h-11 bg-white border border-zinc-100 rounded-2xl flex items-center justify-center shadow-sm p-1.5 overflow-hidden">
+                    <div className="w-12 h-12 bg-white border border-zinc-100 rounded-2xl flex items-center justify-center shadow-sm p-2 overflow-hidden">
                       <img src="https://cdn.nefusoft.cloud/RWIJ1.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-black text-zinc-900 tracking-tighter text-xs md:text-sm uppercase leading-none">LippWangsaff</span>
-                      <span className="text-[7px] md:text-[8px] font-black text-zinc-400 uppercase tracking-[0.2em] mt-0.5">Elaina no Kareshi</span>
+                      <span className="font-black text-zinc-900 tracking-tighter text-sm uppercase leading-none">LippWangsaff</span>
+                      <span className="text-[8px] font-black text-zinc-400 uppercase tracking-[0.2em] mt-1">Elaina no Kareshi</span>
                     </div>
                   </motion.div>
 
-                  <div className="hidden md:flex gap-10 text-[9px] font-black uppercase tracking-[0.4em] text-zinc-400">
+                  <div className="hidden md:flex gap-12 text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400">
                     {navItems.map(item => (
                       <a 
                         key={item.label} 
@@ -86,16 +80,16 @@ const App: React.FC = () => {
                         className="hover:text-zinc-900 transition-colors relative group"
                       >
                         {item.label}
-                        <span className="absolute -bottom-2 left-0 w-0 h-1 bg-zinc-900 transition-all group-hover:w-full rounded-full" />
+                        <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-zinc-900 transition-all group-hover:w-full rounded-full" />
                       </a>
                     ))}
                   </div>
 
                   <button 
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="md:hidden text-zinc-900 p-2.5 bg-zinc-50 rounded-2xl active:scale-90 transition-all border border-zinc-100"
+                    className="md:hidden text-zinc-900 p-3 bg-zinc-50 rounded-2xl border border-zinc-100 active:scale-90 transition-all"
                   >
-                    {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                   </button>
                 </div>
 
@@ -105,18 +99,17 @@ const App: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.95, y: -20 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute top-24 left-0 right-0 bg-white/95 backdrop-blur-3xl border border-zinc-100 rounded-[3rem] p-12 shadow-2xl flex flex-col gap-10 text-center md:hidden"
+                      className="absolute top-28 left-0 right-0 bg-white/95 backdrop-blur-3xl border border-zinc-100 rounded-[3.5rem] p-16 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] flex flex-col gap-12 text-center md:hidden"
                     >
                       {navItems.map((item, idx) => (
                         <motion.a 
                           key={item.label} 
                           href={item.path} 
-                          initial={{ opacity: 0, y: 10 }}
+                          initial={{ opacity: 0, y: 15 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.05 }}
                           onClick={(e) => handleNavigation(e, item.path, item.id)}
-                          className="text-4xl font-black text-zinc-900 tracking-tighter hover:text-zinc-500 transition-colors"
+                          className="text-5xl font-black text-zinc-900 tracking-tighter hover:text-zinc-400 transition-colors"
                         >
                           {item.label}
                         </motion.a>
