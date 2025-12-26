@@ -19,7 +19,7 @@ const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2800);
+    const timer = setTimeout(() => setIsLoading(false), 2500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -36,60 +36,66 @@ const App: React.FC = () => {
     <div className="relative antialiased selection:bg-zinc-900 selection:text-white bg-white overflow-x-hidden min-h-screen">
       <AnimatePresence mode="wait">
         {isLoading ? (
-          <Loader key="loader-global" isLoading={isLoading} />
+          <Loader key="loader-v2" isLoading={isLoading} />
         ) : (
           <motion.div
-            key="main-content-global"
+            key="main-v2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 1 }}
           >
             <Background />
             <motion.main 
-              initial={{ y: 80, opacity: 0 }}
+              initial={{ y: 60, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ delay: 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="relative z-10"
             >
-              <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
-                <div className="bg-white/80 backdrop-blur-3xl border border-zinc-100 rounded-[3rem] px-8 py-5 shadow-2xl flex items-center justify-between">
-                  <div className="flex items-center gap-4 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                    <div className="w-12 h-12 bg-white border border-zinc-100 rounded-2xl flex items-center justify-center p-2 shadow-sm">
+              {/* SLIM NAVBAR */}
+              <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 z-[100] w-[94%] max-w-5xl">
+                <div className="bg-white/70 backdrop-blur-2xl border border-zinc-100 rounded-full px-5 py-3 md:px-8 md:py-5 shadow-2xl flex items-center justify-between">
+                  <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    <div className="w-8 h-8 md:w-12 md:h-12 bg-white border border-zinc-100 rounded-xl flex items-center justify-center p-1.5 shadow-sm">
                       <img src="https://cdn.nefusoft.cloud/RWIJ1.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-black text-zinc-900 tracking-tighter text-sm uppercase leading-none">LippWangsaff</span>
-                      <span className="text-[8px] font-black text-zinc-400 uppercase tracking-widest mt-1">Grey Wanderer</span>
+                      <span className="font-black text-zinc-900 tracking-tighter text-[11px] md:text-sm uppercase leading-none">LippWangsaff</span>
+                      <span className="hidden md:block text-[8px] font-black text-zinc-400 uppercase tracking-widest mt-1">Grey Wanderer</span>
                     </div>
                   </div>
 
-                  <div className="hidden md:flex gap-12 text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400">
-                    <a href="#beranda" onClick={(e) => handleNavigation(e, 'beranda')} className="hover:text-zinc-900 transition-colors">Beranda</a>
-                    <a href="#keahlian" onClick={(e) => handleNavigation(e, 'keahlian')} className="hover:text-zinc-900 transition-colors">Keahlian</a>
-                    <a href="#waifu" onClick={(e) => handleNavigation(e, 'waifu')} className="hover:text-zinc-900 transition-colors">Waifu</a>
-                    <a href="#anime" onClick={(e) => handleNavigation(e, 'anime')} className="hover:text-zinc-900 transition-colors">Anime</a>
-                    <a href="#kontak" onClick={(e) => handleNavigation(e, 'kontak')} className="hover:text-zinc-900 transition-colors">Kontak</a>
+                  <div className="hidden md:flex gap-10 text-[9px] font-black uppercase tracking-[0.4em] text-zinc-400">
+                    {['Beranda', 'Keahlian', 'Waifu', 'Anime', 'Kontak'].map(item => (
+                      <a 
+                        key={item} 
+                        href={`#${item.toLowerCase()}`} 
+                        onClick={(e) => handleNavigation(e, item.toLowerCase())} 
+                        className="hover:text-zinc-900 transition-colors"
+                      >
+                        {item}
+                      </a>
+                    ))}
                   </div>
 
-                  <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-3 bg-zinc-50 rounded-2xl border border-zinc-100">
-                    {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                  <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2.5 bg-zinc-50 rounded-full border border-zinc-100">
+                    {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
                   </button>
                 </div>
 
                 <AnimatePresence>
                   {isMenuOpen && (
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                      initial={{ opacity: 0, scale: 0.9, y: -20 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                      className="absolute top-28 left-0 right-0 bg-white/95 backdrop-blur-3xl border border-zinc-100 rounded-[3.5rem] p-16 shadow-2xl flex flex-col gap-12 text-center md:hidden"
+                      exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                      className="absolute top-20 left-0 right-0 bg-white/95 backdrop-blur-3xl border border-zinc-100 rounded-[2.5rem] p-12 shadow-2xl flex flex-col gap-8 text-center md:hidden"
                     >
                       {['Beranda', 'Keahlian', 'Waifu', 'Anime', 'Kontak'].map((item) => (
                         <a 
                           key={item}
                           href={`#${item.toLowerCase()}`}
                           onClick={(e) => handleNavigation(e, item.toLowerCase())}
-                          className="text-5xl font-black text-zinc-900 tracking-tighter hover:text-zinc-400"
+                          className="text-4xl font-black text-zinc-900 tracking-tighter"
                         >
                           {item}
                         </a>
