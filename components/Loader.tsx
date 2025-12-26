@@ -21,7 +21,7 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
           }
           return prev + Math.floor(Math.random() * 8) + 1;
         });
-      }, 60);
+      }, 50);
       return () => clearInterval(interval);
     }
   }, [isLoading]);
@@ -33,17 +33,17 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
           key="loader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white"
         >
           <div className="relative flex flex-col items-center max-w-xs w-full px-6">
             <motion.div
-              initial={{ rotate: -10 }}
-              animate={{ y: [0, -12, 0], rotate: [-10, -8, -10] }}
-              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              initial={{ rotate: -12 }}
+              animate={{ y: [0, -10, 0], rotate: [-12, -10, -12] }}
+              transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
               className="mb-8"
             >
-              <div className="w-20 h-20 bg-white border border-zinc-100 rounded-[1.8rem] flex items-center justify-center shadow-lg p-3 overflow-hidden">
+              <div className="w-20 h-20 bg-white border border-zinc-100 rounded-[1.5rem] flex items-center justify-center shadow-md p-3 overflow-hidden">
                 <img src="https://cdn.nefusoft.cloud/7WSSJ.jpg" alt="Logo" className="w-full h-full object-contain rounded-lg" />
               </div>
             </motion.div>
@@ -52,7 +52,7 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
               Initializing... {progress}%
             </div>
 
-            <div className="w-full h-[1.5px] bg-zinc-50 rounded-full overflow-hidden mb-3">
+            <div className="w-full h-[1px] bg-zinc-50 rounded-full overflow-hidden mb-3">
               <motion.div
                 className="h-full bg-zinc-900"
                 initial={{ width: "0%" }}
