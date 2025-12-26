@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
               className="text-lg md:text-2xl text-zinc-400 font-medium max-w-2xl mx-auto"
             >
               FullStack Developer & Founder <span className="text-zinc-900">NefuSoft</span>
-            </p>
+            </motion.p>
 
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
@@ -78,7 +78,8 @@ const Hero: React.FC = () => {
           className="mt-20 md:mt-28 flex flex-col items-center gap-3 text-zinc-300 cursor-pointer"
           onClick={() => {
             window.history.pushState({}, '', '/skills');
-            document.getElementById('keahlian')?.scrollIntoView({ behavior: 'smooth' });
+            const el = document.getElementById('keahlian');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
         >
           <span className="text-[9px] font-black uppercase tracking-[0.5em]">Explore</span>
