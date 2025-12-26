@@ -5,7 +5,7 @@ export const SKILLS: Skill[] = [
   { name: 'React', slug: 'react', color: '61DAFB' },
   { name: 'TypeScript', slug: 'typescript', color: '3178C6' },
   { name: 'HTML5', slug: 'html5', color: 'E34F26' },
-  { name: 'CSS3', slug: 'css3', color: '1572B6' },
+  { name: 'CSS3', slug: 'css3', color: '1572B6', iconUrl: 'https://cdn.nefusoft.cloud/s7xh2.jpg' },
   { name: 'JavaScript', slug: 'javascript', color: 'F7DF1E' },
   { name: 'Express', slug: 'express', color: '000000' },
   { name: 'Upstash', slug: 'upstash', color: '00E9A3' },

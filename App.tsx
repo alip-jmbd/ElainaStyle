@@ -62,7 +62,7 @@ const App: React.FC = () => {
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                   <div className="w-10 h-10 md:w-11 md:h-11 bg-white border border-zinc-100 rounded-2xl flex items-center justify-center shadow-sm p-1.5 overflow-hidden">
-                    <img src="https://cdn.nefusoft.cloud/s7xh2.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
+                    <img src="https://cdn.nefusoft.cloud/RWIJ1.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
                   </div>
                   <div className="flex flex-col">
                     <span className="font-black text-zinc-900 tracking-tighter text-xs md:text-sm uppercase leading-none">LippWangsaff</span>

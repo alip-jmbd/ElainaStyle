@@ -34,7 +34,7 @@ const TechOrbit: React.FC = () => {
             >
               <div className="w-20 h-20 md:w-24 md:h-24 bg-white border border-zinc-100 rounded-3xl flex items-center justify-center shadow-sm group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-500">
                 <img 
-                  src={`https://cdn.simpleicons.org/${skill.slug}/${skill.color}`} 
+                  src={skill.iconUrl || `https://cdn.simpleicons.org/${skill.slug}/${skill.color}`} 
                   alt={skill.name}
                   className="w-8 h-8 md:w-10 md:h-10 object-contain group-hover:scale-110 transition-transform duration-500"
                 />

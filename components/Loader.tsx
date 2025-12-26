@@ -43,7 +43,7 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
               className="mb-10"
             >
               <div className="w-24 h-24 bg-white border border-zinc-100 rounded-[2rem] flex items-center justify-center shadow-xl p-4 overflow-hidden">
-                <img src="https://cdn.nefusoft.cloud/s7xh2.jpg" alt="Logo" className="w-full h-full object-cover rounded-xl" />
+                <img src="https://cdn.nefusoft.cloud/RWIJ1.jpg" alt="Logo" className="w-full h-full object-cover rounded-xl" />
               </div>
             </motion.div>
 
