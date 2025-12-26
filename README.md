@@ -1,20 +1,57 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# 🌸 Ethereal Portfolio: Elaina Edition 🌸
 
-This contains everything you need to run your app locally.
+> **"Penyihir Kelabu yang berkelana di dunia kode."**
 
-View your app in AI Studio: https://ai.studio/apps/drive/1R3I-b8AaTfE6TlCHRWtB86IZ7qrXV4JS
+Sebuah mahakarya portfolio FullStack Developer dengan estetika minimalis Jepang yang terinspirasi oleh karakter **Elaina** dari *Majo no Tabitabi*. Dibangun dengan presisi tinggi menggunakan **React**, **Framer Motion**, dan **Tailwind CSS**.
 
-## Run Locally
+![Preview](https://cdn.nefusoft.cloud/IlX8o.jpg)
 
-**Prerequisites:**  Node.js
+## ✨ Fitur Utama
+- **Estetika Zen**: Desain minimalis dengan sentuhan tipografi Jepang.
+- **Fluid Animations**: Transisi antar bagian yang sangat halus menggunakan Framer Motion.
+- **Dynamic Routing**: URL bersih tanpa hash (`/waifu`, `/anime`).
+- **Responsive Design**: Optimal untuk perangkat mobile maupun desktop.
+- **Custom Loader**: Progress bar interaktif dengan tema Elaina.
 
+## 🛠️ Teknologi
+- **Core**: React 18.3.1
+- **Styling**: Tailwind CSS
+- **Motion**: Framer Motion 11
+- **Icons**: Lucide React & SimpleIcons
+- **Fonts**: Noto Sans JP & Inter
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## ⚙️ Panduan Kustomisasi (Rename)
+Ingin mengubah portfolio ini menjadi milik Anda? Ikuti langkah mudah ini:
+
+### 1. Identitas Utama
+Buka file `App.tsx` dan `components/Hero.tsx`:
+- Cari kata `Alif Bilal Rozzaqi` dan ubah menjadi nama Anda.
+- Cari kata `LippWangsaff` untuk mengubah nama brand/logo.
+- Ubah deskripsi Founder `NefuSoft` di `Hero.tsx`.
+
+### 2. Keahlian (Tech Stack)
+Buka file `constants.ts`:
+- Edit array `SKILLS` untuk menambah atau menghapus teknologi yang Anda kuasai.
+- Format: `{ name: 'Nama', slug: 'slug-simpleicons', color: 'hex-tanpa-#' }`.
+
+### 3. Media & Sosial
+Buka file `constants.ts`:
+- Ubah link di array `SOCIALS` dengan URL profil GitHub, WhatsApp, atau website Anda.
+- Ganti gambar di `ELAINA_GALLERY` jika ingin menggunakan foto lain.
+
+### 4. Logo & Foto Profil
+- **Logo**: Cari URL `https://cdn.nefusoft.cloud/s7xh2.jpg` di `App.tsx` dan `Loader.tsx`.
+- **Foto Profil**: Cari URL `https://cdn.nefusoft.cloud/FyTzI.jpg` di `Hero.tsx`.
+
+## 🚀 Deployment
+Portfolio ini menggunakan `importmap` untuk performa maksimal tanpa bundler berat:
+1. Pastikan semua aset gambar dapat diakses secara publik.
+2. Deploy ke platform statis favorit Anda (Vercel, Netlify, atau GitHub Pages).
+3. Untuk GitHub Pages, pastikan konfigurasi routing mendukung History API.
+
+## 📜 Lisensi
+Proyek ini bersifat **Open Source**. Silakan gunakan, modifikasi, dan sebarkan dengan tetap mencantumkan kredit original jika berkenan.
+
+---
+*Dibuat dengan ❤️ oleh [Alif Bilal Rozzaqi](https://github.com/alip-jmbd) untuk para pecinta Elaina.*
