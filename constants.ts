@@ -22,11 +22,11 @@ export const SOCIALS: SocialLink[] = [
   { name: 'WhatsApp', url: 'https://wa.me/6283143776050', icon: 'phone', color: 'bg-green-500' },
 ];
 
-export const ELAINA_GALLERY: (ElainaImage & { type: 'portrait' | 'landscape' | 'square' })[] = [
-  { url: 'https://cdn.nefusoft.cloud/E3liW.jpg', alt: 'Elaina 1', type: 'portrait' }, // 9:16
-  { url: 'https://cdn.nefusoft.cloud/xRtlS.jpg', alt: 'Elaina 2', type: 'portrait' }, // 9:16
-  { url: 'https://cdn.nefusoft.cloud/HU1c6.jpg', alt: 'Elaina 3', type: 'landscape' }, // 16:9
-  { url: 'https://cdn.nefusoft.cloud/WDvCM.jpg', alt: 'Elaina 4', type: 'portrait' }, // 9:16
-  { url: 'https://cdn.nefusoft.cloud/LQczu.jpg', alt: 'Elaina 5', type: 'square' }, // 1:1
-  { url: 'https://cdn.nefusoft.cloud/3wxJB.jpg', alt: 'Elaina 6', type: 'square' }, // 1:1
+export const ELAINA_GALLERY: ElainaImage[] = [
+  { url: 'https://cdn.nefusoft.cloud/HU1c6.jpg', alt: 'Elaina 1' }, // 9:16
+  { url: 'https://cdn.nefusoft.cloud/WDvCM.jpg', alt: 'Elaina 2' }, // 9:16
+  { url: 'https://cdn.nefusoft.cloud/zKN2s.jpg', alt: 'Elaina 3' }, // Landscape
+  { url: 'https://cdn.nefusoft.cloud/E3liW.jpg', alt: 'Elaina 4' }, // 9:16
+  { url: 'https://cdn.nefusoft.cloud/LQczu.jpg', alt: 'Elaina 5' }, // 1:1
+  { url: 'https://cdn.nefusoft.cloud/3wxJB.jpg', alt: 'Elaina 6' }, // 1:1
 ];
