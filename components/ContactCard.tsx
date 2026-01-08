@@ -24,7 +24,7 @@ const ContactCard: React.FC = () => {
           <div className="relative z-10 flex flex-col md:flex-row gap-24 items-center">
             <div className="flex-1 text-center md:text-left">
               <span className="text-zinc-400 text-[11px] font-black uppercase tracking-[0.8em] mb-8 block">KONEKSI</span>
-              <h2 className="text-6xl md:text-8xl font-black text-zinc-900 mb-12 leading-[0.85] tracking-tighter">Mari Bicara <br/><span className="text-zinc-300">Tentang Proyek.</span></h2>
+              <h2 className="text-6xl md:text-8xl font-black text-zinc-900 mb-12 leading-[0.85] tracking-tighter">Ayo Berteman <br/><span className="text-zinc-300">Aku Baik 🗿.</span></h2>
               
               <motion.a 
                 href="mailto:contact@nefusoft.cloud" 
