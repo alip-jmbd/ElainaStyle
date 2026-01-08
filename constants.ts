@@ -18,7 +18,7 @@ export const SKILLS: Skill[] = [
 
 export const SOCIALS: SocialLink[] = [
   { name: 'GitHub', url: 'https://github.com/alip-jmbd', icon: 'github', color: 'bg-zinc-900' },
-  { name: 'Community', url: 'https://nefusoft.cloud', icon: 'globe', color: 'bg-blue-500' },
+  { name: 'Community', url: 'https://nefu.life', icon: 'globe', color: 'bg-blue-500' },
   { name: 'WhatsApp', url: 'https://wa.me/6283143776050', icon: 'phone', color: 'bg-green-500' },
 ];
 
