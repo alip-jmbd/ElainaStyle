@@ -27,12 +27,12 @@ const AboutElaina: React.FC = () => {
             </div>
 
             <p className="text-zinc-500 leading-relaxed text-base font-medium">
-              Kisah saya dimulai saat penayangan perdana anime "Majo no Tabitabi". Sejak hari itu hingga sekarang, kekaguman saya terhadap Elaina tidak pernah pudar. Kemandirian dan jiwanya yang bebas adalah inspirasi bagi saya dalam berkarya.
+              Kisah saya dimulai saat penayangan perdana anime "Majo no Tabitabi". Sejak hari itu, kekaguman saya terhadap Elaina tidak pernah pudar. Kemandirian dan jiwanya yang bebas adalah inspirasi bagi saya dalam berkarya.
             </p>
 
             <div className="bg-white border border-zinc-100 rounded-[2.5rem] p-10 space-y-8 shadow-xl shadow-zinc-100/50">
               <h3 className="flex items-center gap-3 font-bold text-zinc-900 uppercase text-[11px] tracking-widest">
-                <Info size={16} /> DATA ISTRIKU
+                <Info size={16} /> DATA ELAINA
               </h3>
               
               <div className="space-y-6">
