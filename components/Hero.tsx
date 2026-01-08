@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.4, duration: 1 }}
               className="text-lg md:text-2xl text-zinc-400 font-medium max-w-2xl mx-auto"
             >
-              FullStack Developer & Founder <span className="text-zinc-900">NefuSoft</span>
+              Prompter & Founder <span className="text-zinc-900">NefuSoft</span>
             </motion.p>
 
             <motion.div 
