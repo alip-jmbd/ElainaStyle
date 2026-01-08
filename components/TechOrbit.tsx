@@ -19,7 +19,7 @@ const TechOrbit: React.FC = () => {
           >
             Keahlian
           </motion.h2>
-          <p className="text-zinc-400 text-[11px] font-black uppercase tracking-[0.5em]">TECH STACK FAVORIT<br>(Ngeprompt Njir 😹)</br></p>
+          <p className="text-zinc-400 text-[11px] font-black uppercase tracking-[0.5em]">TECH FAVORIT (ngepormpt 😹)</p>
         </div>
 
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 md:gap-8">
